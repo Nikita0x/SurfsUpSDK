@@ -1,23 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://s81ka3c20th2"]
+[gd_scene load_steps=5 format=3 uid="uid://s81ka3c20th2"]
 
-[ext_resource type="Script" uid="uid://ckqkaxt6k8i4u" path="res://Assets/Scripts/typewriter.gd" id="1_u8ubb"]
+[ext_resource type="Texture2D" uid="uid://dgc2sl8n41fnq" path="res://Assets/Textures/Plastic003/Plastic003_1K-JPG_Roughness.jpg" id="1_u8ubb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lj8af"]
+albedo_texture = ExtResource("1_u8ubb")
 
 [sub_resource type="BoxMesh" id="BoxMesh_mn3uw"]
 
+[sub_resource type="SphereMesh" id="SphereMesh_lj8af"]
+
 [node name="MeshInstance3D" type="MeshInstance3D"]
-transform = Transform3D(2.24514, 0, 0, 0, 2.10668, 0, 0, 0, 0.144606, 0, 0, 0)
+transform = Transform3D(1.85086, 0, 0, 0, 1.38763, 0, 0, 0, 0.0260244, 0.131756, 0, 0)
+material_override = SubResource("StandardMaterial3D_lj8af")
 mesh = SubResource("BoxMesh_mn3uw")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0591105, 0, 0, 0, 0.0915398, 0, 0, 0, 4.66995, -0.508939, 0.494369, -0.0360889)
+rotation_order = 0
+mesh = SubResource("SphereMesh_lj8af")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D"]
+transform = Transform3D(9.14032, 0, 0, 0, 7.87256, 0, 0, 0, 8.22825, 0, 0, 0.766922)
+light_color = Color(0.200868, 0.57835, 0.887653, 1)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0591105, 0, 0, 0, 0.0915398, 0, 0, 0, 4.66995, 0.490628, 0.494369, -0.0360889)
+rotation_order = 0
+mesh = SubResource("SphereMesh_lj8af")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D2"]
+transform = Transform3D(9.14032, 0, 0, 0, 7.87256, 0, 0, 0, 8.22825, 0, 0, 0.766922)
+light_color = Color(0.5586, 0.63, 0.2016, 1)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0591105, 0, 0, 0, 0.0915398, 0, 0, 0, 4.66995, 0.490628, -0.482081, -0.0360889)
+rotation_order = 0
+mesh = SubResource("SphereMesh_lj8af")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D3"]
+transform = Transform3D(9.14032, 0, 0, 0, 7.87256, 0, 0, 0, 8.22825, 0, 0, 0.766922)
+light_color = Color(1, 0.393333, 0.09, 1)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0591105, 0, 0, 0, 0.0915398, 0, 0, 0, 4.66995, -0.492222, -0.478506, -0.0360889)
+rotation_order = 0
+mesh = SubResource("SphereMesh_lj8af")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D4"]
+transform = Transform3D(9.14032, 0, 0, 0, 7.87256, 0, 0, 0, 8.22825, 0, 0, 0.766922)
+light_color = Color(0.403922, 0.262745, 1, 1)
+
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5358, 0, 0.159175, 0.500097)
-text = "GOOGOOGAGA"
-font_size = 14
-script = ExtResource("1_u8ubb")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Label3D"]
-transform = Transform3D(0.445407, 0, 0, 0, 0.474681, 0, 0, 0, 4.50276, -0.35651, -0.217198, 1.36052)
-light_color = Color(3.85046e-06, 0.63242, 0.609482, 1)
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="Label3D"]
-transform = Transform3D(0.445407, 0, 0, 0, 0.474681, 0, 0, 0, 4.50276, 0.285102, -0.715188, 1.36052)
-light_color = Color(0.906609, 0.230231, 0.638056, 1)
+transform = Transform3D(0.407022, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.277336, 0.599681)
+text = "Map   by
+GOOGOOO   GAGA MENTALITY"

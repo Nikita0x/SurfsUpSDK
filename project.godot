@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Surfsup SDK"
 config/description="SurfsUp Map Making SDK"
+run/main_scene="uid://bwa2f6us0g4g"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://ysqanrf6aw6x"
@@ -35,4 +36,4 @@ folder_colors={
 
 [surfs_up]
 
-maps_directory="/home/mark/Godot/Source/surfs-up/Maps"
+maps_directory="/home/lulz/.steam/debian-installation/steamapps/common/SurfsUp/Maps"

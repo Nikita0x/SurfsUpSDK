@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu4cx14r0xi81"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tsrpb"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(2.383, 0, 0, 0, 2.50457, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_tsrpb")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(-0.239075, 0.287426, 0.190595, 0.265087, 0.283202, -0.0945668, -0.484381, 0.166611, -0.858846, -0.334498, -0.508727, 0.838352)
+light_color = Color(0.344519, 0.630915, 0.934294, 1)
+light_energy = 5.687
+light_indirect_energy = 4.232
+light_volumetric_fog_energy = 4.117
+light_size = 0.091
+shadow_enabled = true

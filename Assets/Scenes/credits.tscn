@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://s81ka3c20th2"]
+
+[ext_resource type="Script" uid="uid://ckqkaxt6k8i4u" path="res://Assets/Scripts/typewriter.gd" id="1_u8ubb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mn3uw"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(2.24514, 0, 0, 0, 2.10668, 0, 0, 0, 0.144606, 0, 0, 0)
+mesh = SubResource("BoxMesh_mn3uw")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5358, 0, 0.159175, 0.500097)
+text = "GOOGOOGAGA"
+font_size = 14
+script = ExtResource("1_u8ubb")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Label3D"]
+transform = Transform3D(0.445407, 0, 0, 0, 0.474681, 0, 0, 0, 4.50276, -0.35651, -0.217198, 1.36052)
+light_color = Color(3.85046e-06, 0.63242, 0.609482, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Label3D"]
+transform = Transform3D(0.445407, 0, 0, 0, 0.474681, 0, 0, 0, 4.50276, 0.285102, -0.715188, 1.36052)
+light_color = Color(0.906609, 0.230231, 0.638056, 1)

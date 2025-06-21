@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://c28xui7gwdn5"]
+
+[ext_resource type="PackedScene" uid="uid://2ekgf8ai0k3n" path="res://Levels/Utilities/starting_platform.tscn" id="4_7e6fp"]
+[ext_resource type="PackedScene" uid="uid://cv0c4qmjbp7mb" path="res://Levels/Ramps/Parts/wedge-both-up-90-1024.glb" id="5_4t6x8"]
+[ext_resource type="PackedScene" uid="uid://ck6wobja822h1" path="res://Levels/Ramps/Parts/thin-both-up-45-2048.glb" id="6_ub4j8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i4ak4"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_3158n"]
+sky_material = SubResource("ProceduralSkyMaterial_i4ak4")
+
+[sub_resource type="Environment" id="Environment_ub4j8"]
+background_mode = 2
+sky = SubResource("Sky_3158n")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7f4qm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jjbe8"]
+font_size = 100
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ub4j8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0
+autoplay = true
+
+[node name="LoadingScreen" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="LoadingScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_7f4qm")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="LoadingScreen"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1053.0
+offset_top = -235.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Loading a new map..."
+label_settings = SubResource("LabelSettings_jjbe8")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="SpawnPoint" type="Marker3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.4, 1, 0.4)
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Level" type="Node" parent="."]
+
+[node name="StartingPlatform" parent="Level" instance=ExtResource("4_7e6fp")]
+
+[node name="wedge-both-up-90-1024" parent="Level" instance=ExtResource("5_4t6x8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -137, -118)
+
+[node name="thin-both-up-45-2048" parent="Level" instance=ExtResource("6_ub4j8")]
+transform = Transform3D(-2.98023e-08, 0, 1, 0, 1, 0, -1, 0, -2.98023e-08, -1, -196, -385)
+
+[node name="ramp" parent="Level/thin-both-up-45-2048" index="0"]
+transform = Transform3D(0.0258816, 0.0965927, -1.01549e-10, -0.0965927, 0.0258816, 7.7134e-10, 7.71341e-10, -1.01546e-10, 0.1, 0, 0, 0)
+
+[editable path="Level/thin-both-up-45-2048"]
